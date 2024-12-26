@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 import userRoutes from "./routes/authRoute.js";
 import availability from "./routes/availabilityRoute.js";
 import appointment from "./routes/appointmentRoute.js";
+import getdatabase from "./routes/getUserDataRoute.js";
 
 const app = express();
 app.use(express.json());
@@ -21,6 +22,7 @@ mongoose
 app.use("/api/users", userRoutes);
 app.use("/api/availability", availability);
 app.use("/api/appointments", appointment);
+app.use("/api/get-database", getdatabase);
 
 app.listen(process.env.PORT, () =>
   console.log(`Server running on port ${process.env.PORT}`)
